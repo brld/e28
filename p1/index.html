@@ -4,18 +4,24 @@
     <meta charset="utf-8">
     <title></title>
 
+    <link rel="stylesheet" href="main.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" charset="utf-8" defer></script>
     <script src="script.js" charset="utf-8" defer></script>
   </head>
   <body>
-    <div id="app">
-      <label>Guess a number! <input type="text" v-model="guessValue" id="guessBox"></label>
-      <button type="button" name="button" v-on:click="guesses[0] = guessValue; guess();">Submit guess</button>
+    <section>
+      <div id="app">
+        <div id="guessingArea">
+          <label>Guess a number! <input type="text" v-model="guessValue" id="guessBox"></label>
+          <button type="button" name="button" v-on:click="guesses[0] = guessValue; guess();">Submit guess</button>
+        </div>
 
-      <p>{{ response }}</p>
+        <p id="response">{{ response }}</p>
 
-      <button type="button" name="button" v-if='hasWon == true' v-on:click=reset();>Reset game</button>
+        <button type="button" name="button" v-if='hasWon == true' v-on:click=reset();>Reset game</button>
 
-    </div>
+      </div>
+    </section>
   </body>
 </html>
