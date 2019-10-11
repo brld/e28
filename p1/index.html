@@ -13,7 +13,7 @@
     <section>
       <div id="app">
         <div id="guessingArea">
-          <label>Guess a number! <input type="text" v-model="guessValue" id="guessBox"></label>
+          <label>Guess a number! <input type="text" v-model="guessValue" v-on:keyup.enter="guesses[0] = guessValue; guess();" id="guessBox"></label>
           <button type="button" name="button" v-on:click="guesses[0] = guessValue; guess();">Submit guess</button>
         </div>
 
