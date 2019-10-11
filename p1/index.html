@@ -9,8 +9,13 @@
   </head>
   <body>
     <div id="app">
-      <label>Guess a number! <input type="text" v-model="guessValue"></label>
-      <button type="button" name="button" v-on:click="guesses.push(guess)">Submit guess</button>
+      <label>Guess a number! <input type="text" v-model="guessValue" id="guessBox"></label>
+      <button type="button" name="button" v-on:click="guesses[0] = guessValue; guess();">Submit guess</button>
+
+      <p>{{ response }}</p>
+
+      <button type="button" name="button" v-if='hasWon == true' v-on:click=reset();>Reset game</button>
+
     </div>
   </body>
 </html>
