@@ -12826,14 +12826,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       this.turns.push({
         response: response
       });
+    },
+    reset: function reset() {
+      this.hasWon = false;
+      this.guessed = false;
+      this.guesses = [];
+      this.answer = Math.floor(Math.random() * Math.floor(101));
+      this.turns = [];
     }
-  },
-  reset: function reset() {
-    hasWon = false;
-    guessed = false;
-    guesses = [];
-    answer = Math.floor(Math.random() * Math.floor(101));
-    turns = [];
   }
 });
 

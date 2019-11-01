@@ -32,14 +32,13 @@ let app = new Vue({
       this.turns.push({
         response: response,
       })
+    },
+    reset: function() {
+      this.hasWon = false;
+      this.guessed = false;
+      this.guesses = [];
+      this.answer = Math.floor(Math.random() * Math.floor(101));
+      this.turns = [];
     }
   },
-
-  reset: function() {
-    hasWon = false;
-    guessed = false;
-    guesses = [];
-    answer = Math.floor(Math.random() * Math.floor(101));
-    turns = [];
-  }
 });
