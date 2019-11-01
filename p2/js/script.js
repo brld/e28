@@ -12801,6 +12801,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   },
   data: {
     hasWon: false,
+    guessValue: '',
     guessed: false,
     guesses: [],
     answer: Math.floor(Math.random() * Math.floor(101)),

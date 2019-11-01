@@ -22,14 +22,6 @@
         <turn-info v-if='turns.length > 0' :response='turns[turns.length - 1].response'></turn-info>
 
         <button type="button" name="button" v-if='hasWon == true' v-on:click='reset()'>Reset game</button>
-
-        <!-- <div id="guessingArea">
-          <label>Guess a number! <input type="text" v-model="guessValue" v-on:keyup.enter="guesses[0] = guessValue; guess();" id="guessBox"></label>
-          <button type="button" name="button" v-on:click="guesses[0] = guessValue; guess();">Submit guess</button>
-        </div> -->
-
-
-
       </div>
     </section>
   </body>

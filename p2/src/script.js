@@ -8,6 +8,7 @@ let app = new Vue({
   },
   data: {
     hasWon: false,
+    guessValue: '',
     guessed: false,
     guesses: [],
     answer: Math.floor(Math.random() * Math.floor(101)), // Random number between 1-100, inclusive
