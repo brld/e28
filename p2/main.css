@@ -1,0 +1,23 @@
+section { /* W3 */
+  display: flex;
+  width: 25%;
+  height: 400px;
+  margin: auto;
+  border-radius: 10px;
+  border: 3px solid #c92222;
+}
+
+#app {
+  font-family: sans-serif;
+  margin: auto !important;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+#response {
+  color: blue;
+  font-style: italic;
+}

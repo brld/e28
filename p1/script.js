@@ -5,7 +5,6 @@ var app = new Vue({
     guesses: [],
     hasWon: false,
     answer: Math.floor(Math.random() * Math.floor(101)), // Random number between 1-100, inclusive
-    response: 'Lets get going!'
   },
   methods: {
     guess: function() {
