@@ -32,7 +32,7 @@ export default {
       return this.posts.find(({ id }) => id === postId);
     },
     removeFavorite: function(postId) {
-      this.allFavorites.toggle(postId);
+      this.allFavorites.remove(postId);
     }
   },
   mounted() {

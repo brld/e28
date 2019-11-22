@@ -16,22 +16,28 @@ export default class Favorites {
     localStorage.setItem('favorites', JSON.stringify(this.posts))
   }
 
-  toggle(postId) {
+  add(postId) {
 
     let post = this.getPost(postId)
 
-    if (post) {
-      this.posts.splice({
-        id: postId,
-      });
-
-    } else {
+    if (!post) {
       this.posts.push({
-          id: postId,
+        id: postId,
       });
     }
 
     this.update();
+  }
+
+  remove(postId) {
+    let post = this.getPost(postId)
+
+    let postIndex = this.posts.indexOf(post);
+
+    if (post) {
+      this.posts.splice(postIndex, 1);
+      this.update();
+    } 
   }
 
   getPost(postId) {

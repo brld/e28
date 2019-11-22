@@ -35,7 +35,7 @@ import Favorites from './../../favorites.js'
     methods: {
       favorite: function(postId) {
         let favorites = new Favorites;
-        favorites.toggle(postId)
+        favorites.add(postId)
 
         this.addAlert = true;
 
