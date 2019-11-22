@@ -2,6 +2,7 @@
   <div>
     <h1>Feed</h1>
     <display-all-posts></display-all-posts>
+    <div class='a' v-bind:class="['b', 'c', { d : true }]"></div>
   </div>
 </template>
 
