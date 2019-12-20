@@ -20,7 +20,6 @@ export default {
   },
   computed: {
     posts: function() {
-      console.log(this.$store.state);
       return this.$store.state.posts;
     }
   }

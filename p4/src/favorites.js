@@ -13,12 +13,7 @@ export default class Favorites {
   }
 
   count() {
-    let sum = 0;
-    for (let key of Object.keys(this.posts)) {
-        sum += 1
-        console.log(key)
-    }
-    return sum;
+    return this.posts.length();
   }
 
   update() {

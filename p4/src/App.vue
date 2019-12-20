@@ -11,7 +11,6 @@
 </template>
  
 <script>
-import * as app from './app.js'
 
 export default {
   name: 'app',
@@ -22,16 +21,7 @@ export default {
       links: ['feed', 'users', 'favorites', 'new']
     };
   },
-  computed: {
-    favoritesCount: function() {
-      return this.$store.state.favoritesCount;
-    }
-  },
   mounted() {
-    this.favorites = new app.Favorites();
-
-    this.$store.commit('setFavoritesCount', this.favorites.count());
-
     this.$store.dispatch('setPosts');
   }
 }

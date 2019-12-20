@@ -25,6 +25,8 @@
       },
       users: function() {
         let users = _.map(this.posts, 'author');
+
+        // Creates a single, uniform list of users through a combination of the concat and apply method
         let mergedUsers = [].concat.apply([], users);
         
         return [...new Set(mergedUsers)].sort();

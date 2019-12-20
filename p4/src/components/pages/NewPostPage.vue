@@ -19,12 +19,12 @@
           <div
             class='form-error'
             v-else-if='!$v.post.subject.minLength'
-          >Your subject must contain at least 3 characters.</div>
+          >Your subject must contain at least 3 characters and be unique.</div>
 
           <div
             class='form-error'
-            v-else-if='!$v.post.subject.doesNotExist'
-          >A post has already been created with this subject.</div>
+            v-else-if="!$v.post.subject.toLowerCase().replace(/ /g,'-').replace(/[-]+/g, '-').replace(/[^\w-]+/g,'').doesNotExist"
+          >Your subject must contain at least 3 characters and be unique.</div>
         </div>
       </div>
 
@@ -46,6 +46,11 @@
             class='form-error'
             v-else-if='!$v.post.author.minLength'
           >Your username must contain at least 3 characters.</div>
+
+          <div
+            class='form-error'
+            v-else-if='!$v.post.author.alpha'
+          >Usernames must only contain letters.</div>
         </div>
       </div>
 
@@ -61,15 +66,6 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="tags">Tags (comma separated)</label>
-        <input 
-          type="text" 
-          :class='{ "form-input-error": $v.post.tags.$error }'
-          v-model="post.tags"
-        />
-      </div>
-
       <button type="submit">Create Post</button>
 
       <div class="form-error" v-if="areFormErrors">There are errors you need to correct before submitting.</div>
@@ -83,10 +79,10 @@ import { required, minLength, alpha } from 'vuelidate/lib/validators';
 
 let post = {
   slug: '',
-  subject: '',
   author: '',
+  subject: '',
+  date: '',
   content: '',
-  tags: []
 };
 
 export default {
@@ -101,7 +97,10 @@ export default {
     post: {
       subject: {
         required,
-        minLength: minLength(3)
+        minLength: minLength(3),
+        doesNotExist(value) {
+          return !this.$store.getters.getPostBySlug(value);
+        }
       },
       author: {
         required,
@@ -110,9 +109,6 @@ export default {
       },
       content: {
         required
-      },
-      tags: {
-        alpha
       }
     }
   },
@@ -124,9 +120,9 @@ export default {
   methods: {
     handleSubmit: function() {
       if (!this.areFormErrors) {
-        // Title to slug function courtesy of Peter Boughton on StackOverflow
+        // Replace explanation courtesy of Peter Boughton on StackOverflow
         this.post.slug = this.post.subject.toLowerCase().replace(/ /g,'-').replace(/[-]+/g, '-').replace(/[^\w-]+/g,'');
-
+        this.post.date = new Date().toLocaleDateString().replace(/\//g, '-')
         app.axios
           .post(app.config.api + 'posts.json', this.post)
           .then(response => {
@@ -140,8 +136,6 @@ export default {
               name: 'post',
               params: { slug: this.post.slug }
             });
-
-            console.log(response);
           });
       }
     }

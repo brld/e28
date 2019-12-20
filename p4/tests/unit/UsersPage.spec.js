@@ -7,7 +7,7 @@ describe('UsersPage.vue', () => {
 
   let posts = [
     {
-      id: 1,
+      slug: 'testing-123',
       author: 'Adam',
       subject: 'Testing 123',
       date: '11-11-2018',
@@ -15,7 +15,7 @@ describe('UsersPage.vue', () => {
       tags: ['greeting']
     },
     {
-      id: 2,
+      slug: 'welcome-everyone',
       author: 'Bob',
       subject: 'Welcome everyone',
       date: '12-12-2018',

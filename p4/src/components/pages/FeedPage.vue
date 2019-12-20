@@ -8,23 +8,21 @@
 <script>
 import DisplayAllPosts from './../DisplayAllPosts.vue';
 
-// import * as app from './../../app.js'
-
-  export default {
-    name: 'FeedPage',
-    components: { DisplayAllPosts },
-    data: function() {
-      return {};
-    },
-    mounted() {
-      
-    },
-    computed: {
-      posts: function() {
-        return this.$store.state.posts;
-      }
+export default {
+  name: 'FeedPage',
+  components: { DisplayAllPosts },
+  data: function() {
+    return {};
+  },
+  mounted() {
+    
+  },
+  computed: {
+    posts: function() {
+      return this.$store.state.posts;
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

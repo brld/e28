@@ -6,7 +6,7 @@
     <hr>
     <p>{{ post.content }}</p>
 
-    <button @click='favorite(post.slug)'>Favorite</button>
+    <button @click='favorite(post.slug)'>{{ this.buttonText }}</button>
     <transition name='fade'>
       <div class='alert' v-if='addAlert'>{{ alertMessage }}</div>
     </transition>
@@ -22,7 +22,7 @@ import * as app from './../../app.js'
     props: ['slug'],
     data: function() {
       return {
-        isFavorite: false, addAlert: null, alertMessage: ''
+        isFavorite: false, addAlert: null, alertMessage: '', buttonText: 'Favorite'
       };
     },
     computed: {
@@ -34,20 +34,21 @@ import * as app from './../../app.js'
       
     },
     methods: {
-      favorite: function(postId) {
+      favorite: function(postSlug) {
         let favorites = new app.Favorites;
-        favorites.add(postId)
 
         this.addAlert = true;
 
         if (this.isFavorite == false) {
           this.alertMessage = 'Added to favorites!';
+          this.buttonText = 'Un-favorite'
           this.isFavorite = true;
-          this.$store.commit('updateFavoritesCount', 1)
+          favorites.add(postSlug)
         } else {
           this.alertMessage = 'Removed from favorites!';
+          this.buttonText = 'Favorite'
           this.isFavorite = false; 
-          this.$store.commit('updateFavoritesCount', -1)
+          favorites.remove(postSlug)
         }
 
         setTimeout(() => (this.addAlert = false), 1500);

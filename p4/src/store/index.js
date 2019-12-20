@@ -7,19 +7,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-      favoritesCount: 0,
       posts: null
     },
     mutations: {
-      setFavoritesCount(state, payload) {
-        state.favoritesCount = payload;
-      },
-      updateFavoritesCount(state, payload) {
-        state.favoritesCount += payload;
-      },
       setPosts(state, payload) {
-
-        console.log('success');
         state.posts = payload;
       },
       createPost(state, payload) {

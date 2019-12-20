@@ -39,10 +39,8 @@ export default {
   },
   mounted() {
     this.allFavorites = new app.Favorites();
-    console.log(this.allFavorites);
     
     this.favorites = this.allFavorites.getPosts();
-
   }
 };
 </script>
