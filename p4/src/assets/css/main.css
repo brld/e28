@@ -1,0 +1,187 @@
+* {
+  font-family: sans-serif;
+  margin: 0%;
+}
+
+header nav a {
+  text-decoration: none;
+}
+
+h1 {
+  margin-left: 3%;
+}
+
+header {
+  background-color: black;
+}
+
+nav {
+  margin: 0 3% 3% 3%;
+  padding: 1% 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline;
+  margin: 1% 1% 1% 0;
+  padding: 5px 10px;
+  font-style: italic;
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+nav a {
+  padding: 1% 1% 1% 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+table {
+  margin: 3%;
+  border-collapse: collapse;
+  width: 94%;;
+}
+
+tr {
+  background-color: #fff;
+}
+
+td {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 10px;
+}
+
+hr {
+  margin: 1% 0;
+}
+
+.post {
+  padding: 1%;
+  margin: 3%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.post-author {
+  float: left;
+  margin-bottom: 1%;
+  font-size: 125%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.post-date {
+  float: right;
+  font-style: italic;
+}
+
+.post-subject {
+  font-style: italic;
+  clear: both;
+  font-weight: bold;
+}
+
+.post-content {
+  margin-bottom: 1%;  
+}
+
+.router-link-active {
+  text-decoration: underline;
+}
+
+h2 {
+  margin: 3%;
+}
+
+p {
+  margin-left: 3%;
+}
+
+#post-page hr {
+  margin: 3%;
+}
+
+#post-link {
+  text-decoration: none;
+  color: black;
+}
+
+#no-favorites {
+  margin: 3%;
+}
+
+button {
+  padding: 1%;
+  color: white;
+  background-color: black;
+  border: none;
+  margin: 3%;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8)
+}
+
+.alert {
+  margin-left: 3%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+#favorites-page li {
+  padding: 3%;
+  margin: 3%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#favorites-page button {
+  margin-left: 0;
+}
+
+form {
+  text-align: left;
+  margin-left: 3%;
+}
+
+form button {
+  margin-left: 0;
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+}
+
+input[type=text],
+textarea {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid silver;
+}
+
+.form-input-error {
+  border: 1px solid red;
+}
+
+.form-error {
+  color: red;
+}

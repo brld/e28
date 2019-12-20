@@ -1,0 +1,52 @@
+{
+  "posts": {
+    "seedPost1": {
+      "slug": "testing-123",
+      "author": "Adam",
+      "subject": "Testing 123",
+      "date": "11-11-2018",
+      "content": "Whats up world!",
+      "tags": ["greeting"]
+    },
+    "seedPost2": {
+      "slug": "welcome-everyone",
+      "author": "Bob",
+      "subject": "Welcome everyone",
+      "date": "12-12-2018",
+      "content": "HEY and welcome to all new users!",
+      "tags": ["greeting", "welcome"]
+    },
+    "seedPost3": {
+      "slug": "first-post",
+      "author": "Charlie",
+      "subject": "First post!",
+      "date": "10-10-2018",
+      "content": "Hello world!",
+      "tags": ["greeting"]
+    },
+    "seedPost4": {
+      "slug": "i-love-this",
+      "author": "Daphne",
+      "subject": "I love this",
+      "date": "09-09-2018",
+      "content": "I would like to share this with my friends!",
+      "tags": ["other"]
+    },
+    "seedPost5": {
+      "slug": "shameless-plug",
+      "author": "Susan",
+      "subject": "Shameless plug :)",
+      "date": "11-21-2019",
+      "content": "Try out my product Zipfoods!",
+      "tags": ["other", "promotional"]
+    },
+    "seedPost6": {
+      "slug": "hmm",
+      "author": "Gregory",
+      "subject": "Hmm...",
+      "date": "07-07-2018",
+      "content": "Nice weather we are having...",
+      "tags": ["other"]
+    }
+  }
+}
